@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.teamMember{
+  padding: 2%;
+  border: 1px lightgrey solid;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 3px 3px 3px lightgrey;
+}
