@@ -1,6 +1,10 @@
 * {
   text-align: center;
 }
-form{
+html{
+  height: 100vh;
+  background-color: rgba(211, 211, 211, 0.13);
+}
+form {
   padding: 2%;
 }
