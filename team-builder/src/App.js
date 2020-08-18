@@ -6,30 +6,44 @@ import TeamMemberCard from './TeamMemberCard'
 const initialTeamMember = [
   {
     id: Math.random(),
-    name: 'Michael',
-    email: 'michael@michael.com',
-    role: '',
-  },]
+    name: 'Josh',
+    email: 'Josh@Josh.com',
+    role: 'Backend Engineer ',
+  },
+]
 
 const initialData = {
-  username: '',
+  name: '',
   email: '',
   role: '',
 }
 
+
 function App() {
-  const [teamMember, setTeamMember] = useState([])
+  const [teamMembers, setTeamMember] = useState(initialTeamMember)
   const [formData, setFormData] = useState(initialData)
 
+
 const formUpdate = (name, data) =>{
-  setFormData({...initialData, [name]: data})
+  setFormData({...formData, [name]: data})
+}
+
+const formSubmit = () => {
+
+  const newteamMember = {
+    id: Math.random(),
+    name: formData.name.trim(),
+    email: formData.email.trim(),
+    role: formData.role,
+  }
+  setTeamMember([...teamMembers, newteamMember])
 }
 
   return (
     <div>
-    <Form/>
+    <Form values={formData} update={formUpdate} submit={formSubmit} />
     {
-      initialTeamMember.map(member =>{
+      teamMembers.map(member =>{
         return (
           <TeamMemberCard key={member.id} details={member}/>
         )
